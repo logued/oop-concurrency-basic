@@ -34,6 +34,7 @@ public class CoucurrencyExecutorMain
             executor.execute(listOfRunnables.get(i));
         }
 
+        executor.shutdown();
 
         /**
          * Uses the newCachedThreadPool() factory method of the Executors class
