@@ -35,6 +35,8 @@ public class CoucurrencyExecutorMain
         }
 
         executor.shutdown();
+        // shuts down the thread pool, otherwise it stays running and waits for more
+        // runnables to be added to the pool.
 
         /**
          * Uses the newCachedThreadPool() factory method of the Executors class
