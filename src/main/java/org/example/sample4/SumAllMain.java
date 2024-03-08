@@ -18,6 +18,7 @@ public class SumAllMain {
 
         final int total_threads = 3;    // number of threads in the thread pool
 
+        System.out.println("Assigning three runnables to the Executor thread-pool.");
         ExecutorService executor = Executors.newFixedThreadPool(total_threads);
         for (int i = 0; i < total_threads; i++) {
             executor.execute(listOfRunnables.get(i));
@@ -44,6 +45,8 @@ public class SumAllMain {
             System.out.println("Interrupted exception: " + ex);
         }
 
+        System.out.println("Executor is shutdown, and all threads have finished their work....");
+        System.out.println("Summing up the 'sum' totals for all the runnables....");
         int total = 0;
         for (SumRange_Runnable r : listOfRunnables) {
             total = total + r.getSum();
