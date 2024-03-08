@@ -36,7 +36,7 @@ public class SumAllMain {
         try {
             while (!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {
                 // if all threads have not terminated in the last 100ms interval, then
-                // print th etime lapsed, and then wait again for another 100 ms.
+                // print the time lapsed, and then wait again for another 100 ms.
                 System.out.println("Waiting - time passes = " + (count * 100) +" milliseconds");
                 count++;
             }
