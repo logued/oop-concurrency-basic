@@ -23,10 +23,13 @@ public class SumAllMain {
             executor.execute(listOfRunnables.get(i));
         }
 
-        // If we want to WAIT for the runnables to complete we need th e following code
+        // If we want to WAIT for the runnables to complete we need the following code
 
         int count = 0;
-        executor.shutdown();
+
+        executor.shutdown(); // request that the thread pool be shut down (not instantaneous)
+
+        // wait for all threads in the pool to have finished executing their runnables
         try {
             while (!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {
                 System.out.println("Waiting " + count);
