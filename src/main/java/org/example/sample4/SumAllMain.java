@@ -16,7 +16,7 @@ public class SumAllMain {
         listOfRunnables.add(new SumRange_Runnable(11, 20));
         listOfRunnables.add(new SumRange_Runnable(21, 30));
 
-        final int total_threads = 2;    // number of threads in the thread pool
+        final int total_threads = 3;    // number of threads in the thread pool
 
         ExecutorService executor = Executors.newFixedThreadPool(total_threads);
         for (int i = 0; i < total_threads; i++) {
@@ -30,9 +30,14 @@ public class SumAllMain {
         executor.shutdown(); // request that the thread pool be shut down (not instantaneous)
 
         // wait for all threads in the pool to have finished executing their runnables
+        // before we call the getSum() methods in the runnable tasks.
+        // This serves teh same purpose of the thread.join() in the previous samples
+        // It stops the main thread here until all executor threads in pool have terminated.
         try {
             while (!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {
-                System.out.println("Waiting " + count);
+                // if all threads have not terminated in the last 100ms interval, then
+                // print th etime lapsed, and then wait again for another 100 ms.
+                System.out.println("Waiting - time passes = " + (count * 100) +" milliseconds");
                 count++;
             }
         } catch (InterruptedException ex) {
