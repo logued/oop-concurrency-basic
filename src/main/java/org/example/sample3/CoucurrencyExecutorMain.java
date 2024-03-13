@@ -27,10 +27,10 @@ public class CoucurrencyExecutorMain
         listOfRunnables.add( new GreetingsRunnable("Bonjour") );
         listOfRunnables.add( new GreetingsRunnable("Hola") );
 
-        final int total_threads = 3;    // number of threads in the thread pool
+        final int number_of_threads_in_pool = 2;    // number of threads in the thread pool
 
-        ExecutorService executor = Executors.newFixedThreadPool(total_threads);
-        for(int i = 0; i < total_threads; i++){
+        ExecutorService executor = Executors.newFixedThreadPool(number_of_threads_in_pool);
+        for(int i = 0; i < listOfRunnables.size(); i++){
             executor.execute(listOfRunnables.get(i));
         }
 
