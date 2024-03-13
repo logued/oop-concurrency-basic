@@ -34,20 +34,20 @@ public class CoucurrencyExecutorMain
             executor.execute(listOfRunnables.get(i));
         }
 
-        executor.shutdown();
-        // shuts down the thread pool, otherwise it stays running and waits for more
-        // runnables to be added to the pool.
+        executor.shutdown();// request that the thread pool be shut down (not instantaneous)
+        // At this point, no new runnables can be allocated to the executor queue and
+        // all runnables assigned to the executor (those running in threads, and those in the queue)
+        // will be completed.
 
         /**
-         * Uses the newCachedThreadPool() factory method of the Executors class
-         * to yield an executor optimized for programs with many tasks that are
-         * short-lived or spend most of their time waiting. Each task is
-         * executed on an idle thread if possible, but a new thread is allocated
-         * if all threads are busy. Threads that are idle for an extended time
+         * An alternative is to use the newCachedThreadPool() factory method
+         * of the Executors class to yield an executor optimized for programs
+         * with many tasks that are  short-lived or spend most of their time waiting.
+         * Each task is executed on an idle thread if possible, but a new thread is
+         * allocated if all threads are busy. Threads that are idle for an extended time
          * are terminated.
          */
 
-        // QUery: is two threads are allocated, then th ethird task should eventually run, but does not appear to do so.???
 
     }
 }

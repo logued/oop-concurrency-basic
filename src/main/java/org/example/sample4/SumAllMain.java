@@ -26,8 +26,10 @@ public class SumAllMain {
         // When one runnable finishes, the thread that it was running on becomes available,
         // and the third runnable will be taken from the queue and
         // allocated to run on that thread.
+
         System.out.println("Assigning three Runnables to the Executor thread-pool.");
         ExecutorService executor = Executors.newFixedThreadPool(number_of_threads_in_pool);
+
         for (int i = 0; i < runnablesList.size(); i++) {      // queue up all 3 runnables to be executed in thread pool
             executor.execute(runnablesList.get(i));
         }
@@ -38,8 +40,8 @@ public class SumAllMain {
         // Next we need to make this main thread WAIT so that the executor threads can finish.
 
         executor.shutdown(); // request that the thread pool be shut down (not instantaneous)
-        // At this point, no new runnables can be allocated to the executor queue  and
-        // All runnables assigned to the executor (those running in threads, and those in the queue)
+        // At this point, no new runnables can be allocated to the executor queue and
+        // all runnables assigned to the executor (those running in threads, and those in the queue)
         // will be completed.
 
         // Dependency.
