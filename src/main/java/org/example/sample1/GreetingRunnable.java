@@ -15,7 +15,7 @@ package org.example.sample1;
 
 import java.time.LocalDateTime;
 
-public class RunnableTask implements Runnable
+public class GreetingRunnable implements Runnable
 {
     private static final int REPETITIONS = 10;
     private static final int DELAY = 500;    // milliseconds
@@ -26,7 +26,7 @@ public class RunnableTask implements Runnable
      Constructs the runnable object with the passed-in greeting (e.g. "Hello")
      @param greeting the greeting to display
      */
-    public RunnableTask(String greeting) {
+    public GreetingRunnable(String greeting) {
         this.greeting = greeting;
     }
 
