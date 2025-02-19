@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class GreetingRunnable implements Runnable
 {
     private static final int REPETITIONS = 10;
-    private static final int DELAY = 500;    // milliseconds
+    private static final int DELAY = 500;    // milliseconds (500 ms = half a second)
 
     private String greeting;    // store the greeting in the Runnable object
 
