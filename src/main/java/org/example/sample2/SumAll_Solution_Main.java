@@ -1,4 +1,4 @@
-package org.example.sample2;
+package org.example.sample2;            // Feb 2025
 
 /**
  * Using thread.join() to create dependencies between threads. i.e. to make one wait
@@ -12,12 +12,12 @@ package org.example.sample2;
  * the work in threadX is finished.  When finished, the current thread (here main() )
  * resumes and can use the results from threadX.
  *
- * The initial code has the join() methods commented out, so
+ * The initial code has the join() methods commented out, so,
  * when run, the program gives an incorrect result.  We will then
- * uncomment them to see the effects.
+ * uncomment the join() to see the effects.
  */
 
-public class SumAllSolutionMain
+public class SumAll_Solution_Main
 {
     public static void main(String[] args)
     {
@@ -64,14 +64,15 @@ public class SumAllSolutionMain
 
          Therefore, we must block the current 'main' thread of execution using the
          join() method for each thread - t1.join(), and t2.join().  Note that the
-         commands will cause the current (main) thread to block until t1 nad t2 have
-         completed their work (respectively). (t1 and t2 are not blocked!)
+         commands will cause the current (main) thread to block until threads t1 and t2
+         have completed their work (respectively). (t1 and t2 are not blocked!, it is the main thread
+         that is blocked until the other finish.)
          I.e. we insist on t1 and t2 completing before the main thread can proceed.
-         *
-         * Without the join(), we will get an incorrect result because the sum will
-         * be retrieved from the runnable objects before they have had time
-         * to complete their summing operation. So, the sum may be zero, or some
-         * intermediate value.
+
+         Without the join(), we will get an incorrect result because the sum will
+         be retrieved from the runnable objects before they have had time
+         to complete their summing operation. So, the sum may be zero, or some
+         intermediate value.
          */
         int total = r1.getSum() + r2.getSum();
 

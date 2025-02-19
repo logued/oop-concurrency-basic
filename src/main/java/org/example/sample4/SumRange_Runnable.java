@@ -8,7 +8,8 @@ package org.example.sample4;
 
 public class SumRange_Runnable implements Runnable
 {
-    private int start, end;
+    private int start;
+    private int end;
     private int sum;        // the resulting sum
 
     public SumRange_Runnable(int start, int end) {

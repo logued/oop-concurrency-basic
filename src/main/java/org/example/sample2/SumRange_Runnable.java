@@ -1,6 +1,6 @@
 package org.example.sample2;
 /**
- * This Runnable accepts a range (start to end) of integers
+ * This Runnable accepts a range (start value to end value) of integers
  * and sums up the values in the range.
  * This runnable task can be executed in a thread and runs independently of other code.
  * The task must be coded in the run() method.
@@ -9,8 +9,9 @@ package org.example.sample2;
 
 public class SumRange_Runnable implements Runnable
 {
-    private int start, end;
-    private int sum;        // the resulting sum
+    private int start;
+    private int end;
+    private int sum;        // sum of range for this runnable
 
     public SumRange_Runnable(int start, int end) {
         this.start = start;

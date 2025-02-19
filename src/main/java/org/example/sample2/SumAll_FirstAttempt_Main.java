@@ -19,7 +19,7 @@ import static java.lang.Thread.sleep;
  *
  */
 
-public class SumAllFirstAttemptMain
+public class SumAll_FirstAttempt_Main
 {
     public static void main(String[] args)
     {
@@ -47,4 +47,4 @@ public class SumAllFirstAttemptMain
 //TODO - Solutions to our problem above?
 // 1. Put main thread to sleep to allow t1 & t2 complete first.
 //    But sleep for how long?
-// 2. Force main thread to wait until t1 & t2 complete: use join()
+// 2. Force main thread to wait until t1 & t2 have completed: use join()
